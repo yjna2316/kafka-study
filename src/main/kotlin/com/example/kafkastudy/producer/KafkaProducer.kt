@@ -22,6 +22,7 @@ class KafkaProducer(
 
     private fun handleSuccess(result: SendResult<String, String>) {
         println("Success producing message to topic: ${result.producerRecord}")
+        println("Success producing message to recordMetadata: ${result.recordMetadata.partition()}")
     }
 
     private fun handleError(
